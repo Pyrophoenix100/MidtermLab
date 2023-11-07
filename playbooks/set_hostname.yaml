@@ -1,0 +1,14 @@
+---
+- name: Configure CSR1kv
+  hosts: CSR1kv
+  gather_facts: no
+  connection: local
+  tasks:
+    - name: Configure hostname
+      ios_config:
+        lines:
+          - hostname {{ hostname }}
+  vars_prompt:
+    - name: hostname
+      prompt: Hostname 
+      private: false

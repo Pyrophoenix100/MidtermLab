@@ -1,0 +1,11 @@
+---
+- name: Configure Banner Message
+  hosts: CSR1kv
+  gather_facts: no
+  connection: local
+  tasks:
+    - name: Configure MOTD Banner
+      ios_banner:
+        banner: login
+        text: |
+          Unauthorized access is prohibited. This system is for Cisco DevAsc users only.

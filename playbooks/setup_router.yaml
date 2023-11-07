@@ -1,0 +1,33 @@
+---
+- name: New Router Configuration
+  hosts: CSR1kv
+  gather_facts: no
+  connection: local
+  tasks:
+    - name: Set Company Default Hostname
+      ios_config:
+        lines:
+          - hostname TI-ROUTER
+    - name: Configure Default MOTD Banner
+      ios_banner:
+        banner: login
+        text: |
+          Unauthorized access prohibited. Call IT if you need access to this router. This router is in the configuration stage.
+    - name: Configure Admin Users
+      ios_config:
+        lines:
+          - username rickj privilege 15 password $5(26-3)y
+          - username jacko privilege 15 password P$P$P$P$P$
+- name: New Router DNS Config
+  hosts: CSR1kv
+  gather_facts: no
+  connection: local
+  tasks:
+    - name: Set Company DNS server
+      ios_config:
+        lines:
+          - ip name-server 192.168.56.10 8.8.8.8
+    - name: Set Company Domain Name
+      ios_config:
+        lines:
+          - ip domain-name tuchscherer.labs
