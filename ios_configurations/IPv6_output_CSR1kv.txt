@@ -1,3 +1,0 @@
-GigabitEthernet1       [up/up]
-    FE80::1:1
-    2001:DB8:ACAD:1::1
