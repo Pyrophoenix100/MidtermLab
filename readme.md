@@ -71,8 +71,7 @@ ok=1    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    igno
 ```
 This makes setting up and maintaining an industry standard MOTD incredibly easy, and allows you to ensure that all of your devices have the same MOTD.
 ## Setup Router
-```
-
+```r
 PLAY [New Router Configuration] *******************************************************************************
 
 TASK [Set Company Default Hostname] ***************************************************************************
